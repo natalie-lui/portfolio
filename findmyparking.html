@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Find My Parking – Natalie Lui</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="findmyparking.css" />
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a style="text-decoration: None; color:#2a2d38;" href="index.html">Natalie Lui</a></div>
+        <ul class="nav-links">
+          <li><a href="index.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="playground.html">Playground</a></li>
+          <li><a href="natalielui-resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        </ul>
+    </nav>
+
+    <header class="park-hero">
+        <div class="park-head-content">
+            <div class="park-text fade-right">
+                <h1>Find My Parking</h1>
+                <p>Skills: Fullstack Development</p>
+                <p>Tools & Softwares: Python ⟡ PostgreSQL/PostGIS ⟡ Streamlit ⟡ Pydeck ⟡ APIs</p>
+            </div>
+            <div class="park-header-img fade-up">
+                <img src="graphics/parking-head-img.png"/>
+            </div>
+        </div>
+        <div class="orb-head-subtext fade-up">
+            <p><i>Collaborators: Anna He, Alexis Florres</i></p>
+        </div>
+    </header>
+
+    <div class="park-links">
+        <h1 class="slide-right">Visit our App ~✧₊ ⊹</h1>
+        <button class="slide-left"><a href="https://findmyparking.streamlit.app/" target="_blank">Try out FindMyParking!</a></button>
+        <button class="slide-left"><a href="https://github.com/natalie-lui/findmyparking" target="_blank">Github Repo</a></button>
+    </div>
+
+    <div class="park-prob">
+        <h1 class="slide-right">The Problem</h1>
+        <p class="slide-left">Finding parking locations that fit your needs is a common struggle that people run into daily.
+            People are often seeking convenience along with a multitude of constraints such as cost, accessibility, distance, etc, something which most existing apps don't provide.
+            <strong>Parking decisions are multi-variable and dynamic, but most tools treat them as static location search problems.</strong></p>
+    </div>
+
+    <div class="park-goals">
+        <div class="park-goals-content">
+            <h1 class="slide-right">Our Goals</h1>
+            <p class="slide-left">1. Build a ranking system, not just a map<br>
+                2. Combine multiple real-world signals (cost, distance, availability, weather) in order to provide personalized recommendations<br>
+                3. Make results interpretable and visually clear</p>
+        </div>
+    </div>
+
+    <!-- ===== System Design Carousel ===== -->
+    <div class="park-system-design">
+        <h1 class="slide-right">System Design</h1>
+        <p class="slide-left">A layered architecture connecting user inputs to ranked parking recommendations.</p>
+        <div class="sysdesign-carousel slide-left">
+            <div class="sysdesign-progress" id="sysdesign-progress"></div>
+            <div class="sysdesign-stage" id="sysdesign-stage"></div>
+            <div class="sysdesign-controls">
+                <span class="sysdesign-hint">click card or use arrows</span>
+                <div class="sysdesign-nav">
+                    <button class="sysdesign-btn" id="sysdesign-prev">&#8592;</button>
+                    <button class="sysdesign-btn" id="sysdesign-next">&#8594;</button>
+                </div>
+                <span class="sysdesign-counter" id="sysdesign-counter"></span>
+            </div>
+        </div>
+        <p class="slide-left">The system ingests data from multiple external APIs, including GeoAPIfy for geocoding and location autocomplete, OpenStreetMap for parking metadata, and OpenWeather for contextual signals. Because each API returns data in different formats and levels of completeness, a normalization layer standardizes fields such as location, cost, and availability before downstream processing.</p>
+        <p class="slide-left">We built our ranking engine to compute a weighted score for each parking option based on cost, walking distance, estimated travel time, and contextual signals such as weather. The system is modular, separating data retrieval from scoring logic, allowing ranking weights and features to be easily adjusted.</p>
+        <p class="slide-left">We utilized PostgreSQL with PostGIS to store parking data and user interaction history. PostGIS enables efficient spatial queries such as distance calculations and proximity filtering, which are critical for ranking results. Persisting historical data also allows the system to incorporate user preferences into future recommendations.</p>
+    </div>
+    <div class="park-features">
+        <h1>Highlighted Features</h1>
+        <div class="location-detection">
+            <div class="location-imgs slide-right">
+                <img src="graphics/location-img-1.png"/>
+                <img src="graphics/location-img-2.png"/>
+            </div>
+            <div class="location-text slide-left">
+                <h2>Location Detection & Destination Search</h2>
+                <p>Detects user’s current location from browser GPS & Autocomplete-based search using GeoAPIfy API with real-time geocoding to convert user input into coordinates.</p>
+            </div>
+        </div>
+        <div class="ranking-engine">
+            <div class="ranking-engine-text slide-right">
+                <h2>Ranking Engine</h2>
+                <p>Multi-factor scoring system that weights cost, distance, travel time, and contextual signals to produce ranked parking recommendations. Refined user experience by connecting our ranked options to Google Maps.</p>
+            </div>
+            <img class="slide-left" src="graphics/ranking-engine-img.png"/>
+        </div>
+        <div class="data-and-context">
+            <div class="data-integration slide-right">
+                <h2>Real-Time Data Integration</h2>
+                <p>Aggregates live data from OpenStreetMap and OpenWeather APIs to dynamically adjust recommendations based on weather and traffic conditions.</p>
+            </div>
+            <div class="user-context slide-left"> 
+                <h2>User Context Awareness</h2>
+                <p>Utilizes session based logins to incorporate user preferences and historical lessons to personalize ranking outputs.</p>
+            </div>
+        </div>
+        <div class="map-ui">
+            <div class="map-ui-text">
+                <h2>Map UI</h2>
+                <p>PyDeck-based visualization rendering ranked parking options spatially relative to the destination.</p>
+            </div>
+            <img src="graphics/map-ui-img.png"/>
+        </div>
+    </div>
+    <div class="park-challenges slide-left">
+        <h1>Key Challenges</h1>
+        <p><strong>1. Designing a Meaningful Ranking Algorithm - </strong> Balancing multiple competing factors (cost vs distance vs convenience) required designing a scoring system that was both interpretable and tunable. 
+            We implemented a weighted model that could be easily adjusted, allowing experimentation with different tradeoffs. We wanted our ranking algorithm to encompass both contextual signals and user history to provide the most optimal recommendations.</p>
+        <p><strong>2. Normalizing and Handling API Data - </strong>We found that real-world API data, is often complex and not user friendly. Each API also returned data in different formats and levels of completeness (ex: missing cost data or inconsistent location formats). 
+            We designed a normalization layer to standardize fields and handle missing values gracefully, ensuring consistent inputs for the ranking engine.</p>
+    </div>
+    <div class="park-results slide-right">
+        <h1>Results</h1>
+        <p>✮Improved realism of recommendations using real-world APIs</p>
+        <p>✮Transitioned from simulated to a production-like data pipeline</p>
+        <p>✮Improved user experience with auto-fill search features and clear, interactive visualization</p>
+        <p>✮Built a system that mimics real decision-making (not just static filtering)</p>
+        <p>✮Designed for scalability (modular pipeline, extensible ranking)</p>
+    </div>
+    <div class="park-reflection slide-left">
+        <h1>Reflection</h1>
+        <p>This project shifted my perspective from building feature-based applications to designing systems. 
+            Further, through developing both backend routes and frontend designs, this project taught me to think about projects in a full-stack scope and to analyze how each dev layer interacted with one another. 
+            I gained experience integrating multiple, real data sources, designing scoring algorithms, and working with geospatial data. It also reinforced the importance of handling imperfect real-world data and making practical tradeoffs in system design. </p>
+    </div>
+    <footer class="footer">
+        <h1>I'd love to stay connected !! ⋆.˚𖦹⋆✮⋆.˚</h1>
+        <a href="https://www.linkedin.com/in/natalie-w-lui" target="_blank" rel="noopener noreferrer">
+          <img src="graphics/linkedin.png" alt="LinkedIn Profile">
+        </a>
+    </footer>
+
+    <!-- GSAP for scroll animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script src="cardStack.js"></script>
+</body>
+</html>

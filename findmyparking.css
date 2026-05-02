@@ -1,0 +1,530 @@
+/* ========== Base Styles ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  line-height: 1.6;
+  background: #fff;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* ============ Header ========== */
+.park-hero {
+  text-align: left;
+  background-color:#fff;
+  padding: 20px 120px;
+  position: relative;
+}
+
+.park-head-content {
+  margin: 70px auto 0px;
+  border-radius: 20px;
+  color:#fff;
+  position: relative;
+  background: #2F3830;
+  padding: 2rem;
+  max-width: 90%;
+}
+
+.park-text{
+    margin-left: 40px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.park-text h1{
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 95%;
+    margin-bottom: 2rem;
+    max-width: 60%;
+}
+
+.park-text p{
+  max-width: 35%;
+  font-weight: 300;
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+.park-header-img{
+    position: absolute;
+    top: -120px;
+    right: -70px;
+}
+
+.park-header-img img {
+  height: 450px;
+  width: auto;
+}
+
+.orb-head-subtext {
+  text-align: left;
+  margin-left: 80px;
+  margin-top: 16px;
+  color: #A7B5AC;
+  font-size: 13px;
+}
+
+/* ===== Links Section ===== */
+.park-links {
+  background: #fff;
+  text-align: center;
+  padding: 40px 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.park-links h1 {
+  color: #2F3830;
+  font-weight: 700;
+  font-size: 50px;
+  margin-bottom: 8px;
+}
+
+.park-links button {
+  background: #2F3830;
+  border: none;
+  border-radius: 100px;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.park-links button:hover {
+  background: #4a5e52;
+  transform: translateY(-2px);
+}
+
+.park-links button a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ===== Problem Section ===== */
+.park-prob{
+    background: #fff;
+    text-align: center;
+    padding: 20px 160px 40px;
+}
+
+.park-prob h1{
+    color: #2F3830;
+    font-weight: 700;
+    font-size: 50px;
+    margin-bottom: 16px;
+}
+
+.park-prob p{
+    color: #A7B5AC;
+    margin: 20px auto;
+    line-height: 1.8;
+}
+
+/* ===== Goals Section ===== */
+.park-goals {
+  background: white;
+  text-align: center;
+  padding: 40px 160px ;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.park-goals-content {
+    background-color: #2F3830;
+    border-radius: 22px;
+    padding: 24px 80px;
+}
+
+.park-goals h1 {
+  color: white;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.park-goals p {
+  color: white;
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 2;
+  font-size: 15px;
+}
+
+/* ===== System Design Carousel ===== */
+.park-system-design {
+  background: #fff;
+  text-align: center;
+  padding: 60px 160px 60px;
+}
+
+.park-system-design h1 {
+  color: #2F3830;
+  font-weight: 700;
+  font-size: 50px;
+  margin-bottom: 12px;
+}
+
+.park-system-design > p {
+  color: #A7B5AC;
+  margin: 16px auto 40px;
+  max-width: 580px;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.sysdesign-carousel {
+  max-width: 640px;
+  margin: 0 auto 48px;
+  font-family: "Inter", sans-serif;
+}
+
+/* progress bar */
+.sysdesign-progress {
+  display: flex;
+  height: 2px;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  background: #f0f0f0;
+}
+
+.sysdesign-prog-seg {
+  flex: 1;
+  background: #f0f0f0;
+  transition: background 0.3s ease;
+  cursor: pointer;
+  border-right: 2px solid #fff;
+}
+
+.sysdesign-prog-seg:last-child {
+  border-right: none;
+}
+
+.sysdesign-prog-seg.done {
+  background: #2F3830;
+}
+
+/* stack stage */
+.sysdesign-stage {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+/* cards */
+.sysdesign-card {
+  position: absolute;
+  width: 100%;
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(.22, 1, .36, 1), opacity 0.4s ease;
+  will-change: transform, opacity;
+  overflow: hidden;
+}
+
+.sysdesign-card-inner {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.sysdesign-card-num {
+  font-size: 11px;
+  font-weight: 600;
+  color: #A7B5AC;
+  letter-spacing: 0.08em;
+  min-width: 24px;
+}
+
+.sysdesign-card-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.sysdesign-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sysdesign-card-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sysdesign-card-placeholder svg {
+  width: 22px;
+  height: 22px;
+  stroke: #d0d0d0;
+}
+
+.sysdesign-card-body {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.sysdesign-card-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2a2d38;
+  margin-bottom: 3px;
+}
+
+.sysdesign-card-desc {
+  font-size: 12px;
+  color: #A7B5AC;
+  line-height: 1.5;
+}
+
+.sysdesign-card-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-top: 8px;
+  background: #f0f4f1;
+  color: #2F3830;
+}
+
+.sysdesign-card-arrow {
+  font-size: 16px;
+  color: #A7B5AC;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.sysdesign-card[data-pos="0"]:hover .sysdesign-card-arrow {
+  transform: translateX(4px);
+}
+
+/* controls */
+.sysdesign-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sysdesign-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.sysdesign-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  color: #2a2d38;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.sysdesign-btn:hover {
+  background: #f9f9f9;
+  border-color: #2F3830;
+}
+
+.sysdesign-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.sysdesign-hint {
+  font-size: 11px;
+  color: #A7B5AC;
+  letter-spacing: 0.04em;
+}
+
+.sysdesign-counter {
+  font-size: 12px;
+  color: #A7B5AC;
+  min-width: 40px;
+  text-align: right;
+}
+
+/* ===== Highlighted Features ===== */
+.park-features {
+  background: #fff;
+  padding: 60px 160px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.park-features h1 {
+  color: #2F3830;
+  font-weight: 700;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* ── shared row styles ── */
+.location-detection,
+.ranking-engine,
+.map-ui {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+}
+
+/* text blocks */
+.location-text,
+.ranking-engine-text,
+.map-ui-text {
+  flex: 1;
+}
+
+.ranking-engine-text {
+    text-align: right;
+    margin-right: 24px;
+    max-width: 40%;
+}
+
+.location-text h2,
+.ranking-engine-text h2,
+.map-ui-text h2,
+.data-integration h2,
+.user-context h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #A7B5AC;
+  margin-bottom: 12px;
+}
+
+.location-text p,
+.ranking-engine-text p,
+.map-ui-text p,
+.data-integration p,
+.user-context p {
+  font-size: 14px;
+  font-weight: 300;
+  color: #A7B5AC;
+  line-height: 1.8;
+}
+
+/* ── location imgs ── */
+.location-imgs {
+  flex: 1;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+ 
+.location-imgs img {
+  width: auto;
+  height: 280px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* ── single images */
+.ranking-engine img,
+.map-ui img {
+  flex: 1;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 16px;
+  object-fit: cover;
+  padding: 1.5rem 2rem 0 2rem;
+}
+
+.data-integration,
+.user-context {
+  flex: 1;
+  padding-top: 32px;
+}
+
+.data-integration h2,
+.user-context h2 {
+  margin-bottom: 12px;
+}
+
+/*Individual Feature Styling*/
+.map-ui { 
+
+    flex-direction: row-reverse; 
+    max-width: 65%;
+}
+
+.data-and-context {
+  display: flex;
+  gap: 36px;
+  max-width: 65%;
+  justify-content: center;
+}
+
+.ranking-engine {
+    background-color: #2F3830;
+    border-radius: 22px;
+    max-width: 80%;
+    margin: 2rem;
+}
+
+/*========KEY CHALLENGES & Results & Reflection==========*/
+.park-challenges, .park-results, .park-reflection{
+    background: #fff;
+    padding: 60px 160px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.park-challenges h1, .park-results h1, .park-reflection h1{
+    color:#2a2d38;
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.park-challenges p, .park-reflection p {
+    font-size: 14px;
+    color: #A7B5AC;
+    line-height: 1.8;
+    margin: 12px;
+}
+
+.park-reflection p{
+    max-width: 75%;
+}
+
+

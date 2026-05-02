@@ -129,3 +129,4 @@ const merchSection = document.querySelector('.urmo-merch');
 if (merchSection) {
   observer.observe(merchSection);
 }
+

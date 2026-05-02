@@ -143,29 +143,87 @@ body {
 }
 
 @keyframes floatDown {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(10px); }
 }
 
 
 /* ========== Project Highlight ========== */
-.project-header{
+.project-header {
   background: #fff;
   padding: 20px 120px;
 }
 
-.project1{
+/* ===== shared skill tag lightening for all project cards ===== */
+.park-text-landing p:first-of-type,
+.orb-text p:first-of-type,
+.spencer-text p:first-of-type {
+  font-weight: 300;
+  font-size: 13px;
+  opacity: 0.55;
+  margin-bottom: 6px;
+}
+
+/* ===== FindMyParking ===== */
+.project3 {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+}
+
+.park-content {
+  padding: 0px 10px 0px 40px;
+  background-image: url(graphics/gradient2.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  position: relative;
+  overflow: visible;
+  max-width: 62%;
+}
+
+.park-img {
+  margin-top: -80px;
+  margin-left: -20px;
+  gap: 0;
+  align-items: flex-start;
+  max-height: 480px;
+  margin-right: -160px;
+}
+
+.park-text-landing {
+  padding: 20px;
+  margin-left: 20px;
+  margin-top: -20px;
+  color: #fff;
+}
+
+.park-text-landing h1 {
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 90%;
+  margin-bottom: 12px;
+}
+
+.park-text-landing p {
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+/* ===== Orbital ===== */
+.project1 {
   background: #fff;
   display: flex;
   justify-content: center;
   padding: 100px 0px;
 }
 
-.orbital-content{
+.orbital-content {
   padding: 20px 80px 20px 40px;
   background-image: url(graphics/gradient1.png);
   background-size: cover;
@@ -180,47 +238,47 @@ body {
   max-height: 60%;
 }
 
-.orbital-img{
+.orbital-img {
   margin-top: -100px;
   margin-left: -20px;
   gap: 0;
 }
 
-.orb-img-1{
+.orb-img-1 {
   max-height: 420px;
   margin-right: -35px;
 }
 
-.orb-img-2{
+.orb-img-2 {
   max-height: 420px;
 }
 
-.orb-text{
+.orb-text {
   padding: 20px;
   margin-left: 20px;
   margin-top: -20px;
   color: #fff;
 }
 
-.orb-text h1{
+.orb-text h1 {
   font-weight: 700;
   font-size: 70px;
 }
 
-.orb-text p{
+.orb-text p {
   margin-bottom: 20px;
   font-weight: 300;
 }
 
-/*===spencer===*/
-.project2{
+/* ===== Spencer ===== */
+.project2 {
   background: #fff;
   display: flex;
   justify-content: center;
   padding: 20px 0px;
 }
 
-.spencer-content{
+.spencer-content {
   padding: 0px 10px 0px 40px;
   background-image: url(graphics/gradient2.png);
   background-size: cover;
@@ -234,44 +292,42 @@ body {
   overflow: visible;
 }
 
-.spencer-img{
+.spencer-img {
   margin-top: -80px;
   margin-left: 0px;
   gap: 0;
-  align-items:flex-start;
+  align-items: flex-start;
 }
 
-.spencer-img-1{
+.spencer-img-1 {
   max-height: 480px;
   margin-right: -100px;
 }
 
-.spencer-img-2{
+.spencer-img-2 {
   max-height: 480px;
   margin-left: 20px;
-  
 }
 
-.spencer-text{
+.spencer-text {
   padding: 20px;
   margin-left: 20px;
   margin-top: -20px;
   color: #fff;
 }
 
-.spencer-text h1{
+.spencer-text h1 {
   font-weight: 700;
   font-size: 70px;
 }
 
-.spencer-text p{
+.spencer-text p {
   margin-bottom: 20px;
   font-weight: 300;
 }
 
-/*==read-more===*/
-
-.read-more{
+/* ===== Read More ===== */
+.read-more {
   font-family: "Inter", sans-serif;
   font-weight: 500;
   border: none;
@@ -280,15 +336,15 @@ body {
   color: #fff;
 }
 
-.read-more:hover{
+.read-more:hover {
   color: #8b90a3;
 }
 
-.hover-green:hover{
-  color:#A7B5AC;
+.hover-green:hover {
+  color: #A7B5AC;
 }
 
-.right-arrow{
+.right-arrow {
   display: inline-block;
   transition: transform 0.3s ease;
   animation: floatRight 0.6s ease-in-out infinite;
@@ -300,73 +356,73 @@ body {
   100% { transform: translateX(0); }
 }
 
-/*===footer===*/
-.footer{
+/* ===== Footer ===== */
+.footer {
   background: #fff;
   display: flex;
   justify-content: right;
   align-items: center;
 }
 
-.footer img{
+.footer img {
   max-width: 75px;
   padding: 10px;
   margin-right: 10px;
 }
 
-.footer h1{
+.footer h1 {
   font-weight: 500;
   font-size: 20px;
   padding: 0 10px;
 }
 
-/*==animations==*/
+/* ===== Animations ===== */
 .fade-up {
   opacity: 0;
-  transform: translateY(30px); /* starts slightly lower */
+  transform: translateY(30px);
   animation: fadeUp 0.5s ease-out forwards;
 }
 
 @keyframes fadeUp {
   to {
     opacity: 1;
-    transform: translateY(0); /* moves to normal position */
+    transform: translateY(0);
   }
 }
 
-.fade-left{
-  opacity:0;
+.fade-left {
+  opacity: 0;
   transform: translateX(50px);
   animation: fadeLeft 0.5s ease-out forwards;
 }
 
-@keyframes fadeLeft{
-  to{
+@keyframes fadeLeft {
+  to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-.fade-right{
-  opacity:0;
+.fade-right {
+  opacity: 0;
   transform: translateX(-50px);
   animation: fadeRight 0.5s ease-out forwards;
 }
 
-@keyframes fadeRight{
-  to{
-    opacity: 1;  
+@keyframes fadeRight {
+  to {
+    opacity: 1;
     transform: translateX(0);
   }
 }
 
-.slide-left{
-  opacity:0;
+.slide-left {
+  opacity: 0;
   transform: translateX(100px);
 }
 
-.slide-right{
-  opacity:0;
+.slide-right {
+  opacity: 0;
   transform: translateX(-100px);
 }
 
@@ -375,10 +431,6 @@ body {
 }
 
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-20px); }
 }
